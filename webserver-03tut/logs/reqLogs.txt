@@ -1,0 +1,7 @@
+2024-01-15	13:51:02	8beec790-7057-41c7-959a-776c411abef4	/img/img1.jpg undefined GET
+2024-01-15	14:08:35	a6de4b4e-c33e-4a95-8b55-58d760845dc6	/ https://www.google.com OPTIONS
+2024-01-15	14:08:35	88c21176-0b61-4898-83e5-7411ddc999e2	/ https://www.google.com GET
+2024-01-15	16:03:11	88aa3217-bfdd-47f5-8da8-95828f4be1da	/ undefined GET
+2024-01-15	16:03:11	ff9b140f-d135-4dbb-b6ae-4b362d6cd9f2	/css/style.css undefined GET
+2024-01-15	16:03:13	b39ccb2d-fc6b-4361-aaf6-8f2c0caa6345	/favicon.ico undefined GET
+2024-01-15	16:07:34	0a0053dd-a899-494d-b6fa-ee9bab49e785	/img/img1.jpg undefined GET
