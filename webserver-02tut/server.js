@@ -10,7 +10,7 @@ class Emitter extends EventEmitter {}
 const myEmitter = new Emitter();
 
 // create a serve
-const PORT = process.env.PORT || 3500;
+const PORT = process.env.PORT || 5500;
 
 myEmitter.on("logs", (msg, fileName) => logEvents(msg, fileName));
 
@@ -86,12 +86,12 @@ const server = http.createServer((req, res) => {
   } else {
     switch (path.parse(filePath).base) {
       case "old-page.html":
-        response.writeHead(301, { Location: "new-page.html" });
-        response.end();
+        res.writeHead(301, { Location: "new-page.html" });
+        res.end();
         break;
       case "www-page.html":
-        response.writeHead(301, { Location: "/" });
-        response.end();
+        res.writeHead(301, { Location: "/" });
+        res.end();
         break;
       default:
         serverFile("text/html", path.join(__dirname, "views", "404.html"), res);
