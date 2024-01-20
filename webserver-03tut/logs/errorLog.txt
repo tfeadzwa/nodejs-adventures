@@ -6,3 +6,5 @@
 2024-01-18	17:03:27	bb6b2460-9427-464b-a3a0-d41f74995f58	SyntaxError : Expected double-quoted property name in JSON at position 12
 2024-01-18	17:09:16	c8fdc1dd-5cce-4560-ad0c-21ac20e8cd04	Error : Cannot set headers after they are sent to the client
 2024-01-18	17:27:04	9f8a40e8-e67f-4e13-aca2-644837f457e0	ReferenceError : firstname is not defined
+2024-01-20	12:33:07	4289de10-055d-4cba-a29c-98c0166fb748	Error : Cannot set headers after they are sent to the client
+2024-01-20	12:35:00	5178691e-b1ff-42cf-a371-813e57e59cc1	Error : Cannot set headers after they are sent to the client
