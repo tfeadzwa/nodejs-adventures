@@ -6,6 +6,7 @@ const path = require("path");
 const { logger } = require("./middleware/logEvents");
 const errorHandler = require("./middleware/errorHandler");
 const verifyJWT = require("./middleware/verifyJWT");
+const cookieParser = require("cookie-parser");
 
 const PORT = process.env.PORT || 3500;
 
@@ -20,6 +21,9 @@ app.use(express.urlencoded({ extended: false }));
 // server json
 app.use(express.json());
 
+// middleware for cookies
+app.use(cookieParser());
+
 // serve static files
 app.use("/", express.static(path.join(__dirname, "/public")));
 
@@ -27,6 +31,8 @@ app.use("/", express.static(path.join(__dirname, "/public")));
 app.use("/", require("./routes/root"));
 app.use("/register", require("./routes/api/register"));
 app.use("/auth", require("./routes/api/auth"));
+app.use("/refresh", require("./routes/api/refresh"));
+app.use("/logout", require("./routes/api/logout"));
 
 app.use(verifyJWT);
 app.use("/employees", require("./routes/api/employees"));

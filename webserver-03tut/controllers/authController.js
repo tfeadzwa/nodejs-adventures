@@ -17,7 +17,7 @@ const handleUserLogin = async (req, res) => {
   if (!user || !pwd)
     return res
       .status(400)
-      .json({ message: "Usrename and password is required!" });
+      .json({ message: "Username and password is required!" });
 
   const foundUser = usersDB.users.find((usr) => usr.username === user);
   if (!foundUser) return res.sendStatus(401);
@@ -51,6 +51,8 @@ const handleUserLogin = async (req, res) => {
 
     res.cookie("jwt", refreshToken, {
       httpOnly: true,
+      sameSite: "None",
+      secure: true,
       maxAge: 24 * 60 * 60 * 1000,
     });
     res.json({ accessToken });
