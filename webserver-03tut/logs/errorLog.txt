@@ -8,3 +8,7 @@
 2024-01-18	17:27:04	9f8a40e8-e67f-4e13-aca2-644837f457e0	ReferenceError : firstname is not defined
 2024-01-20	12:33:07	4289de10-055d-4cba-a29c-98c0166fb748	Error : Cannot set headers after they are sent to the client
 2024-01-20	12:35:00	5178691e-b1ff-42cf-a371-813e57e59cc1	Error : Cannot set headers after they are sent to the client
+2024-01-23	10:46:55	f3e9feac-ae9f-47cf-874c-4c86e9f2100a	ReferenceError : cookie is not defined
+2024-01-23	10:52:47	b0f47bb1-f4d9-454c-8588-e466c8501437	Error : Cannot set headers after they are sent to the client
+2024-01-23	11:37:38	c2f97db3-5fd4-42bf-8153-a8d6f1f5a5c9	ReferenceError : Cannot access 'refreshToken' before initialization
+2024-01-23	11:38:35	cdb94de3-120c-44ce-93ee-61a980d17b01	ReferenceError : Cannot access 'refreshToken' before initialization
