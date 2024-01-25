@@ -1,10 +1,4 @@
-const usersDB = {
-  users: require("../models/users.json"),
-  setUsers: function (users) {
-    this.users = users;
-  },
-};
-
+const User = require("../models/User");
 const fsPromises = require("fs").promises;
 const bcrypt = require("bcrypt");
 const path = require("path");
@@ -18,7 +12,7 @@ const handleNewUser = async (req, res) => {
       .json({ message: `Username and password are required!` });
 
   //check for duplicates
-  const duplicate = usersDB.users.find((usr) => usr.username === user);
+  const duplicate = await User.findOne({ username: user }).exec();
   if (duplicate)
     return res
       .status(409)
@@ -27,21 +21,13 @@ const handleNewUser = async (req, res) => {
   try {
     // encrypt password
     const hashedPwd = await bcrypt.hash(pwd, 10);
-    // store new user
-    const newUser = {
-      UserInfo: {
-        username: foundUser.username,
-        roles: { User: 2001 },
-        password: hashedPwd,
-      },
-    };
-    usersDB.setUsers([...usersDB.users, newUser]);
-    await fsPromises.writeFile(
-      path.join(__dirname, "..", "models", "users.json"),
-      JSON.stringify(usersDB.users)
-    );
+    // create new user
+    const newUser = await User.create({
+      username: user,
+      password: hashedPwd,
+    });
 
-    console.log(usersDB.users);
+    console.log(newUser);
     res.status(201).json({ success: `New user ${user} created successfully!` });
   } catch (err) {
     res.status(500).json({ error: err.message });
